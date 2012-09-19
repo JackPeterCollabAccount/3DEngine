@@ -16,11 +16,11 @@ namespace LiteXML {
 			size = file.tellg();
 			this->memblock = new char[size];
 			file.read(this->memblock, size);
-			file.close();
 			worked = 1;
 		} else {
 			worked = 0;
 		}
+		file.close();
 		} catch(...) {
 			worked = 0;
 		}
