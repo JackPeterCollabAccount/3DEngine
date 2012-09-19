@@ -1,44 +1,15 @@
 #include "EngineMain.h"
+#include "liblitexml.h"
 #define DEBUG 0
 //#undef DEBUG
-
-int global = 0;
-
-class Base
-{
-public:
-	virtual void func()
-	{
-		global = 1;
-	}
-};
-
-class Child : public Base
-{
-public:
-	virtual void func()
-	{
-		global = 2;
-	}
-};
 
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdline,int nCmdShow)
 {
 	HWND han_Window = NewWindow("New Game",100,100,500,500);
 
-	int size = 5;
+	LiteXML::liblitexml test("C:\\eula.108.txt");
 
-	Base *test = new Child();
-
-#if DEBUG == 0
-	test->func();
-#endif
-
-	std::cout << global;
-
-	delete test;
-
-	return global;
+	return test.Add(test.worked, 0);
 }
 
 HWND NewWindow(LPCTSTR str_Title,int int_XPos, int int_YPos, int int_Width, int int_Height)
