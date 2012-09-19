@@ -24,7 +24,7 @@ public:
 
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdline,int nCmdShow)
 {
-	HWND han_Window = NewWindow("DirectX C++ Tutorial",100,100,500,500);
+	HWND han_Window = NewWindow("New Game",100,100,500,500);
 
 	int size = 5;
 
