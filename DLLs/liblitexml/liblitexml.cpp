@@ -4,6 +4,8 @@
 
 namespace LiteXML {
 
+#pragma region
+
  LibLiteXML::LibLiteXML() 
  {
  }
@@ -51,6 +53,10 @@ namespace LiteXML {
  {
  }
 
+#pragma endregion LibLiteXML Implementation
+
+#pragma region
+
  std::string LiteXMLException::What()
  {
 	return this->why;
@@ -60,5 +66,7 @@ namespace LiteXML {
  {
 	return LiteXMLException::What();
  }
+
+#pragma endregion LiteXMLException Implementation
 
 }
