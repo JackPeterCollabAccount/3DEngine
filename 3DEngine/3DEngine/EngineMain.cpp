@@ -12,7 +12,7 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdli
 
 	try
 	{
-		test.Open("C:\\eula.1028.txt");
+		i = test.Open("C:\\eula.1028.txt");
 	}
 	catch(LiteXML::LiteXMLException e)
 	{
