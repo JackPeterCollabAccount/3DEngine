@@ -15,6 +15,7 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdli
  }
  catch(LiteXML::LiteXMLException e)
  {
+	 i = 1;
  }
 
  return i;
