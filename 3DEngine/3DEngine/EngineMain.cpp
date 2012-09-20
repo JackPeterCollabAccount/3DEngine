@@ -5,11 +5,19 @@
 
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdline,int nCmdShow)
 {
-	HWND han_Window = NewWindow("New Game",100,100,500,500);
+ HWND han_Window = NewWindow("New Game",100,100,500,500);
 
-	LiteXML::liblitexml test("C:\\eula.108.txt");
+ int i = 0;
 
-	return test.Add(test.worked, 0);
+ try
+ {
+ LiteXML::liblitexml test("C:\\eula.1028.txt");
+ }
+ catch(LiteXML::LiteXMLException e)
+ {
+ }
+
+ return i;
 }
 
 HWND NewWindow(LPCTSTR str_Title,int int_XPos, int int_YPos, int int_Width, int int_Height)
