@@ -21,7 +21,6 @@ public:
 	private:
 	LPDIRECTINPUTDEVICE8 m_KeyboardDevice; //keyboard device
     char m_KeyBuffer[256];    //buffer for keys
-	bool* AppRunning;
 
 	public:
 		Keyboard(LPDIRECTINPUT8 input,HWND WindowHandle);
@@ -37,7 +36,6 @@ public:
 	{
 	private:
 		LPDIRECTINPUTDEVICE8 m_MouseDevice; //mouse device
-		bool* AppRunning;
 		HWND winHandle;
 	public:
 		Mouse(LPDIRECTINPUT8 input,HWND WindowHandle);

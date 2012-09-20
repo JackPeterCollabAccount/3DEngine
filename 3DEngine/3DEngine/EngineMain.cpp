@@ -1,7 +1,6 @@
 #include "EngineMain.h"
 #include "liblitexml.h"
 #include "utilities.h"
-//#include "DirectInput.h"
 
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdline,int nCmdShow)
 {
@@ -32,8 +31,8 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdli
 	while(true)
 	{
 		POINT p;
-		p.x = 40;
-		p.y = 40;
+		p.x = getWindowWidth(han_Window) / 2;
+		p.y = getWindowHeight(han_Window) / 2;
 		mouse->setPos(p);
 
 		if(keyboard->isKeyDown(DIK_ESCAPE))
