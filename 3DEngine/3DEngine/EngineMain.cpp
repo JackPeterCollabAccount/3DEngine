@@ -1,7 +1,6 @@
 #include "EngineMain.h"
 #include "liblitexml.h"
-#define DEBUG 0
-//#undef DEBUG
+#include "utilities.h"
 
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdline,int nCmdShow)
 {
@@ -21,6 +20,7 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdli
  }
 
  MessageBox(han_Window, test.data.c_str(), "2", MB_OK);
+ MessageBox(han_Window, ToString<float>(45.86f).c_str(), "Error", MB_OK);
 
  return i;
 }

@@ -82,6 +82,7 @@
   <ItemGroup>
     <ClInclude Include="EngineMain.h" />
     <ClInclude Include="stdh.h" />
+    <ClInclude Include="utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EngineMain.cpp" />
