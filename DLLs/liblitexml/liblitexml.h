@@ -3,26 +3,27 @@
 
 #include <string>
 #include <stdexcept>
+#include <sstream>
+#include <fstream>
 
 namespace LiteXML
 {
- class liblitexml {
+ class LibLiteXML {
  public:
-  __declspec(dllexport) liblitexml(std::string f);
-  __declspec(dllexport) ~liblitexml();
+  __declspec(dllexport) LibLiteXML();
+  __declspec(dllexport) int Open(std::string f);
+  __declspec(dllexport) ~LibLiteXML();
 
-  // Returns a + b
-        static double __declspec(dllexport) Add(double a, double b);
-
+ std::string data;
  private:
-  char *memblock;
+  
  };
 
  class LiteXMLException
  {
  public:
   __declspec(dllexport) LiteXMLException(std::string why) : why(why) {}
-  std::string __declspec(dllexport) virtual what();
+  std::string __declspec(dllexport) virtual What();
  private:
   std::string why;
  };
@@ -31,7 +32,7 @@ namespace LiteXML
  {
  public:
   __declspec(dllexport) IOException(std::string why) : LiteXMLException(why) {}
-  std::string __declspec(dllexport) virtual what();
+  std::string __declspec(dllexport) virtual What();
  };
 
 }

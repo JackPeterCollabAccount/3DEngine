@@ -1,61 +1,64 @@
 #pragma once
 
 #include "liblitexml.h"
-#include <fstream>
 
 namespace LiteXML {
 
- liblitexml::liblitexml(std::string f) 
+ LibLiteXML::LibLiteXML() 
  {
-  this->memblock = NULL;
-  std::fstream file;
-
-  try
-  {
-   file.open (f, std::ios::in);
-
-   if(file.is_open())
-   {
-    std::ifstream::pos_type size;
-    size = file.tellg();
-    this->memblock = new char[static_cast<unsigned int>(size)];
-    file.read(this->memblock, size);
-    file.close();
-   }
-   else
-   {
-    file.close();
-    throw IOException("File is not open for reading");
-   }
-  }
-  catch(...)
-  {
-   file.close();
-   throw IOException("Error opening file");
-  }
  }
 
- liblitexml::~liblitexml()
+ int LibLiteXML::Open(std::string f)
  {
-  if(this->memblock != NULL)
-  {
-   delete[] this->memblock;
-   this->memblock = NULL;
-  }
+	std::fstream file;
+	
+	try
+	{
+		file.open(f, std::ios::in | std::ios::binary);
+
+		if(file.is_open())
+		{
+			std::string temp;
+			std::stringstream builder;
+
+			while(file.good())
+			{
+				std::getline(file, temp);
+				builder << temp;
+			}
+
+			this->data = builder.str();
+		}
+		else
+		{
+			file.close();
+			throw IOException("Error reading file: "+f);
+		}
+	}
+	catch(IOException e)
+	{
+		throw e;
+	}
+	catch(...)
+	{
+		file.close();
+		throw IOException("Error opening file: "+f);
+	}
+	return 0;
  }
 
- double liblitexml::Add(double a, double b)
+ LibLiteXML::~LibLiteXML()
  {
-  return a + b;
  }
 
- std::string LiteXMLException::what()
+ std::string LiteXMLException::What()
  {
-  return this->why;
+	return this->why;
  }
 
- std::string IOException::what()
+ std::string IOException::What()
  {
-  return LiteXMLException::what();
+	return LiteXMLException::What();
  }
+
 }

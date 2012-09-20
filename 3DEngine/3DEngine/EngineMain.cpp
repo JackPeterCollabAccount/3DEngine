@@ -9,14 +9,18 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdli
 
  int i = 0;
 
+ LiteXML::LibLiteXML test;
+
  try
  {
- LiteXML::liblitexml test("C:\\eula.1028.txt");
+	 test.Open("C:\\eula.1028.txt");
  }
  catch(LiteXML::LiteXMLException e)
  {
-	 i = 1;
+	 MessageBox(han_Window, e.What().c_str(), "Error", MB_OK | MB_ICONERROR);
  }
+
+ MessageBox(han_Window, test.data.c_str(), "2", MB_OK);
 
  return i;
 }
