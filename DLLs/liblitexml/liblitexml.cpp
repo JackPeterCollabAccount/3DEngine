@@ -2,7 +2,8 @@
 
 #include "liblitexml.h"
 
-namespace LiteXML {
+namespace LiteXML
+{
 
 #pragma region
 

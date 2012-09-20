@@ -12,11 +12,12 @@ namespace LiteXML
 		public:
 			__declspec(dllexport) LibLiteXML();
 			__declspec(dllexport) int Open(std::string f);
+			__declspec(dllexport) int Process() {return 0;}
 			__declspec(dllexport) ~LibLiteXML();
 
 			std::string data;
 			private:
-  
+
 	};
 
 	class LiteXMLException
@@ -33,7 +34,7 @@ namespace LiteXML
 	{
 		public:
 			__declspec(dllexport) IOException(std::string why) : LiteXMLException(why) {}
-		std::string __declspec(dllexport) virtual What();
+			__declspec(dllexport) std::string virtual What();
 	};
 
 }

@@ -1,33 +1,53 @@
 #include "EngineMain.h"
 #include "liblitexml.h"
 #include "utilities.h"
+//#include "DirectInput.h"
 
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdline,int nCmdShow)
 {
- HWND han_Window = NewWindow("New Game",100,100,500,500);
+	HWND han_Window = NewWindow("New Game",100,100,500,500);
 
- int i = 0;
+	int i = 0;
 
- LiteXML::LibLiteXML test;
+	LiteXML::LibLiteXML test;
 
- try
- {
-	 test.Open("C:\\eula.1028.txt");
- }
- catch(LiteXML::LiteXMLException e)
- {
-	 MessageBox(han_Window, e.What().c_str(), "Error", MB_OK | MB_ICONERROR);
- }
+	try
+	{
+		test.Open("C:\\eula.1028.txt");
+	}
+	catch(LiteXML::LiteXMLException e)
+	{
+		MessageBox(han_Window, e.What().c_str(), "Error", MB_OK | MB_ICONERROR);
+	}
 
- MessageBox(han_Window, test.data.c_str(), "2", MB_OK);
- MessageBox(han_Window, ToString<float>(45.86f).c_str(), "Error", MB_OK);
+	MessageBox(han_Window, test.data.c_str(), "2", MB_OK);
+	MessageBox(han_Window, ToString<float>(45.86f).c_str(), "Error", MB_OK);
 
- return i;
+	Input* input = new Input(han_Window);
+
+	Input::Keyboard* keyboard = input->getKeyboard();
+
+	Input::Mouse* mouse = input->getMouse();
+
+	while(true)
+	{
+		POINT p;
+		p.x = 40;
+		p.y = 40;
+		mouse->setPos(p);
+
+		if(keyboard->isKeyDown(DIK_ESCAPE))
+			break;
+	}
+
+	input->releaseAll();
+
+	return i;
 }
 
 HWND NewWindow(LPCTSTR str_Title,int int_XPos, int int_YPos, int int_Width, int int_Height)
 {
-    WNDCLASSEX wnd_Structure;
+	WNDCLASSEX wnd_Structure;
 
     wnd_Structure.cbSize = sizeof(WNDCLASSEX);
     wnd_Structure.style = CS_HREDRAW | CS_VREDRAW;
