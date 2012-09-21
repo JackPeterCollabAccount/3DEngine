@@ -67,29 +67,28 @@ namespace LiteXML
 				//close the file - error
 				file.close();
 				throw IOException("Error reading file: "+f);
-				return 0;
 				}
 		}
 		catch(IOException e)
 		{
 			//close the file - error
 			throw e;
-			return 0;
 		}
 		catch(...)
 		{
 			//close the file - error
 			file.close();
 			throw IOException("Error opening file: "+f);
-			return 0;
 		}
 	}
 
 	//Way of getting an XML value :D
 	std::string LibLiteXML::ReadValue(std::string p)
 	{
+		//Default return value
 		std::string returnV = "0";
 
+		//Strings after split
 		std::vector<std::string> spl = split(data, ';');
 		std::vector<std::string>::iterator start, end, it;
 
@@ -98,22 +97,27 @@ namespace LiteXML
 
 		unsigned int f = 0;
 
+		//For each string after the split see if they match the value wanted
 		for(it = start; it < end; it++)
 		{
-			if(*it == p) {
+			//If they do then great!
+			if(*it == p)
+			{
 				break;
 			} else {
 				f++;
 			}
 		}
 
-		if(f+1 > spl.size()) {
+		//If we've gone through all values of f we haven't found it
+		if(f+1 > spl.size())
+		{
 			throw IOException("Could not find paramater '"+p+"' within file!");
-			return returnV;
 		}
 
 		f++;
 
+		//Use f to find the appropriate string again
 		returnV = spl[f];
 
 		return returnV;
