@@ -16,17 +16,6 @@ int getWindowHeight(HWND handle);
 
 int getWindowWidth(HWND handle);
 
-class EngineException
-{
-	public:
-		EngineException(std::string why) : why(why) {}
-		std::string virtual What()
-		{
-			return why;
-		}
-
-	private:
-		std::string why;
-};
+class EngineException;
 
 std::vector<std::string> StrSplit(const std::string& strValue, char separator);
