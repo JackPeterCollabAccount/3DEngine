@@ -5,6 +5,7 @@
 #include <sstream>
 #include <fstream>
 #include <vector>
+#include <algorithm>
 
 namespace LiteXML
 {
@@ -17,8 +18,6 @@ namespace LiteXML
 		__declspec(dllexport) std::string ReadValue(std::string p);
 		__declspec(dllexport) int Process() {return 0;}
 		__declspec(dllexport) ~LibLiteXML();
-
-		std::vector<std::string> split(const std::string& strValue, char separator);
 
 		std::string data;
 

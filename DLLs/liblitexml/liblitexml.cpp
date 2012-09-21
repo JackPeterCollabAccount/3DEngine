@@ -88,17 +88,33 @@ namespace LiteXML
 	//Way of getting an XML value :D
 	std::string LibLiteXML::ReadValue(std::string p)
 	{
-		std::string returnV = NULL;
+		std::string returnV = "0";
 
-		std::vector<std::string> spl = LibLiteXML::split(data, ';');
+		std::vector<std::string> spl = split(data, ';');
+		std::vector<std::string>::iterator start, end, it;
 
-		int f = 0;
-		
-		for_each(spl.begin(), spl.end())
+		start = spl.begin();
+		end = spl.end();
+
+		unsigned int f = 0;
+
+		for(it = start; it < end; it++)
 		{
-
-			f++;
+			if(*it == p) {
+				break;
+			} else {
+				f++;
+			}
 		}
+
+		if(f+1 > spl.size()) {
+			throw IOException("Could not find paramater '"+p+"' within file!");
+			return returnV;
+		}
+
+		f++;
+
+		returnV = spl[f];
 
 		return returnV;
 	}
