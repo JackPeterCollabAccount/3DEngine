@@ -6,24 +6,24 @@ namespace LibEnc
 {
 
 	void inline RotateLeft(int * i, int amount)
-{
-	_asm
 	{
+		_asm
+		{
 		mov ebx, i
 		mov ecx, [amount]
 		rol [ebx], cl
+		}
 	}
-}
 
 	void inline RotateRight(int * i,int amount)
-{
-	_asm
 	{
+		_asm
+		{
 		mov ebx, i
 		mov ecx, [amount]
 		ror [ebx], cl
+		}
 	}
-}
 
 	int __declspec(dllexport) EncSingle(int, int, int, int);
 
