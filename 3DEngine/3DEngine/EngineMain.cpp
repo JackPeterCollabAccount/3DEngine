@@ -36,12 +36,9 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdli
 		p.y = getWindowHeight(han_Window) / 2;
 		mouse->setPos(p);
 
-		if(keyboard->isKeyDown(DIK_ESCAPE))
+		if(keyboard->isKeyDown(DIK_F))
 			break;
 	}
-
-		std::string t = "lol";
-		MessageBox(han_Window, t.c_str(), "Return Value", MB_OK);
 
 	try
 	{
