@@ -3,13 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "3DEngine", "3DEngine\3DEngine.vcxproj", "{5E79C924-A4A9-439B-9909-E9280F89F234}"
 	ProjectSection(ProjectDependencies) = postProject
+		{CEE1CD69-0675-4B4A-BBD6-2CB84F8001B5} = {CEE1CD69-0675-4B4A-BBD6-2CB84F8001B5}
 		{1FF70E71-1BE8-46DB-A6BC-01BF906F15F8} = {1FF70E71-1BE8-46DB-A6BC-01BF906F15F8}
 		{006C6FF7-CC11-45B2-9814-AFAAFABEFD59} = {006C6FF7-CC11-45B2-9814-AFAAFABEFD59}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liblitexml", "..\DLLs\liblitexml\liblitexml.vcxproj", "{006C6FF7-CC11-45B2-9814-AFAAFABEFD59}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DirectInput", "..\DirectInput\DirectInput.vcxproj", "{1FF70E71-1BE8-46DB-A6BC-01BF906F15F8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libinput", "..\DLLs\libinput\libinput.vcxproj", "{1FF70E71-1BE8-46DB-A6BC-01BF906F15F8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libenc", "..\DLLs\libenc\libenc.vcxproj", "{CEE1CD69-0675-4B4A-BBD6-2CB84F8001B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +32,10 @@ Global
 		{1FF70E71-1BE8-46DB-A6BC-01BF906F15F8}.Debug|Win32.Build.0 = Debug|Win32
 		{1FF70E71-1BE8-46DB-A6BC-01BF906F15F8}.Release|Win32.ActiveCfg = Release|Win32
 		{1FF70E71-1BE8-46DB-A6BC-01BF906F15F8}.Release|Win32.Build.0 = Release|Win32
+		{CEE1CD69-0675-4B4A-BBD6-2CB84F8001B5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CEE1CD69-0675-4B4A-BBD6-2CB84F8001B5}.Debug|Win32.Build.0 = Debug|Win32
+		{CEE1CD69-0675-4B4A-BBD6-2CB84F8001B5}.Release|Win32.ActiveCfg = Release|Win32
+		{CEE1CD69-0675-4B4A-BBD6-2CB84F8001B5}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

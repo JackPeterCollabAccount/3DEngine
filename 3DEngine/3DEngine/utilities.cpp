@@ -41,15 +41,7 @@ std::vector<std::string> StrSplit(const std::string& strValue, char separator)
 	return vecstrResult;
 }
 
-class EngineException
-{
-	public:
-		EngineException(std::string why) : why(why) {}
-		std::string virtual What()
-		{
-			return why;
-		}
-
-	private:
-		std::string why;
-};
+//std::string EngineException::What()
+//{
+//			return why;
+//}

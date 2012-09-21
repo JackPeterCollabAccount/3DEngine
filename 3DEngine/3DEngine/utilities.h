@@ -16,6 +16,8 @@ int getWindowHeight(HWND handle);
 
 int getWindowWidth(HWND handle);
 
+
+
 class EngineException;
 
 std::vector<std::string> StrSplit(const std::string& strValue, char separator);

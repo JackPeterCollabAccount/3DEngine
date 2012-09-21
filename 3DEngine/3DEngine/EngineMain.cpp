@@ -2,6 +2,7 @@
 #include "liblitexml.h"
 #include "utilities.h"
 #include "DevCommands.h"
+#include "libenc.h"
 
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdline,int nCmdShow)
 {
@@ -10,8 +11,14 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdli
 
 	DevCom::SendCommand("spawn dude here");
 
-	int i = 0;
+	int i = 1;
 
+	std::string strings = "sdggggggggg";
+		
+	LibEnc::EncString(&strings, 2);
+
+	LibEnc::DecString(&strings, 2);
+	
 	LiteXML::LibLiteXML test;
 
 	try
