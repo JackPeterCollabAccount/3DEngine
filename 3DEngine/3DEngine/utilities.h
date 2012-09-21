@@ -30,3 +30,16 @@ int getWindowWidth(HWND handle)
 	}
 	return 0;
 }
+
+class EngineException
+{
+	public:
+		EngineException(std::string why) : why(why) {}
+		std::string virtual What()
+		{
+			return why;
+		}
+
+	private:
+		std::string why;
+};

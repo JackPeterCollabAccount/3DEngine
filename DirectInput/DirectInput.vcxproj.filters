@@ -15,12 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DirectInput.h">
+    <ClInclude Include="libinput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DirectInput.cpp">
+    <ClCompile Include="libinput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

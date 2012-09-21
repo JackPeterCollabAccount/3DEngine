@@ -36,7 +36,7 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdli
 		p.y = getWindowHeight(han_Window) / 2;
 		mouse->setPos(p);
 
-		if(keyboard->isKeyDown(DIK_F))
+		if(keyboard->isKeyDown(Keys::F))
 			break;
 	}
 
