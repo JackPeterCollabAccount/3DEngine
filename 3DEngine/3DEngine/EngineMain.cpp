@@ -1,11 +1,14 @@
 #include "EngineMain.h"
 #include "liblitexml.h"
 #include "utilities.h"
+#include "DevCommands.h"
 
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdline,int nCmdShow)
 {
 
 	HWND han_Window = NewWindow("New Game",100,100,500,500);
+
+	DevCom::SendCommand("spawn dude here");
 
 	int i = 0;
 
@@ -43,18 +46,11 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdli
 	try
 	{
 		std::string h = test.ReadValue("name");
-		if(h != "0") {
-			MessageBox(han_Window, h.c_str(), "Return Value", MB_OK);
-		}
-		else
-		{
-			i = 0;
-		}
+		MessageBox(han_Window, h.c_str(), "Return Value", MB_OK);
 	}
 	catch(LiteXML::LiteXMLException e)
 	{
 		MessageBox(han_Window, e.What().c_str(), "Error", MB_OK | MB_ICONERROR);
-		i = 0;
 	}
 
 	input->releaseAll();

@@ -1,5 +1,3 @@
-#pragma once
-
 #include "liblitexml.h"
 
 //Start of the dll

@@ -81,12 +81,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DevCommands.h" />
     <ClInclude Include="EngineMain.h" />
     <ClInclude Include="stdh.h" />
     <ClInclude Include="utilities.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DevCommands.cpp" />
     <ClCompile Include="EngineMain.cpp" />
+    <ClCompile Include="utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DirectInput\DirectInput.vcxproj">
