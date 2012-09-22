@@ -13,7 +13,7 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdli
 
 	int i = 1;
 
-	std::string strings = "sdggggggggg";
+	std::string strings = "De-encrypted!";
 		
 	LibEnc::EncString(&strings, 2);
 
@@ -34,7 +34,7 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdli
 	test.SaveFile("C:\\Users\\Peter\\Desktop\\coords.txt");
 
 	MessageBox(han_Window, test.data.c_str(), "2", MB_OK);
-	MessageBox(han_Window, ToString<float>(45.86f).c_str(), "Error", MB_OK);
+	MessageBox(han_Window, strings.c_str(), "Error", MB_OK);
 
 	Input* input = new Input(han_Window);
 

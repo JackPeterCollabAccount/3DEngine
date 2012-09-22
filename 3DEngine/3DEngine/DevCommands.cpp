@@ -34,6 +34,7 @@ namespace DevCom
 		else if(com == "SETHEALTH") { SetHealth(p, size); }
 		else if(com == "KILL") { Kill(p, size); }
 		else if(com == "GODMODE") { GodMode(); }
+		else if(com == "QUEST") { Quest(p, size); }
 		else if(com == "DEBUG") { Debug(); }
 		else { delete[] p; return 0; }
 
@@ -67,6 +68,11 @@ namespace DevCom
 	}
 
 	void Kill(std::string* p, short pAm)
+	{
+
+	}
+
+	void Quest(std::string* p, short pAm)
 	{
 
 	}

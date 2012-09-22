@@ -1,4 +1,5 @@
 #include "liblitexml.h"
+#include "libenc.h"
 
 //Start of the dll
 namespace LiteXML
@@ -58,6 +59,7 @@ namespace LiteXML
 
 				//set it into data
 				this->data = builder.str();
+				LibEnc::DecString(&this->data, 2);
 				return 1;
 			}
 			else
@@ -197,8 +199,9 @@ namespace LiteXML
 		{
 			if(file.is_open())
 			{
+				LibEnc::EncString(&this->data, 2);
 				char *fileData = (char*)this->data.c_str();
-
+				LibEnc::DecString(&this->data, 2);
 				file.write(fileData, this->data.size());
 				file.close();
 
