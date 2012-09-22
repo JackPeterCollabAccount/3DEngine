@@ -30,6 +30,9 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPreviousInstance,LPSTR lpcmdli
 		MessageBox(han_Window, e.What().c_str(), "Error", MB_OK | MB_ICONERROR);
 	}
 
+	test.WriteValue("bajeebus", "    ");
+	test.SaveFile("C:\\Users\\Peter\\Desktop\\coords.txt");
+
 	MessageBox(han_Window, test.data.c_str(), "2", MB_OK);
 	MessageBox(han_Window, ToString<float>(45.86f).c_str(), "Error", MB_OK);
 

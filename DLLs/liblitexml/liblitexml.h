@@ -16,6 +16,9 @@ namespace LiteXML
 		__declspec(dllexport) LibLiteXML();
 		__declspec(dllexport) int Open(std::string f);
 		__declspec(dllexport) std::string ReadValue(std::string p);
+		__declspec(dllexport) void WriteValue(std::string i, std::string v);
+		__declspec(dllexport) int DeleteValue(std::string i);
+		__declspec(dllexport) int SaveFile(std::string f);
 		__declspec(dllexport) int Process() {return 0;}
 		__declspec(dllexport) ~LibLiteXML();
 

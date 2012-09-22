@@ -99,18 +99,21 @@ namespace LiteXML
 		for(it = start; it < end; it++)
 		{
 			//If they do then great!
-			if(*it == p)
-			{
-				break;
-			} else {
-				f++;
+			if(f % 2 == 0) {
+				if(*it == p)
+				{
+					break;
+				}
 			}
+
+			f++;
 		}
 
 		//If we've gone through all values of f we haven't found it
 		if(f+1 > spl.size())
 		{
-			throw IOException("Could not find paramater '"+p+"' within file!");
+			//throw IOException("Could not find identifier '"+p+"' within file!");
+			return returnV;
 		}
 
 		f++;
@@ -119,6 +122,108 @@ namespace LiteXML
 		returnV = spl[f];
 
 		return returnV;
+	}
+
+	//Simply append to our data
+	void LibLiteXML::WriteValue(std::string i, std::string v)
+	{
+		if(this->ReadValue(i) != "0")
+			this->DeleteValue(i);
+
+		this->data += i+";"+v+";";
+	}
+
+	int LibLiteXML::DeleteValue(std::string i)
+	{
+		//Default return value
+		int returnV = 0;
+
+		//Strings after split
+		std::vector<std::string> spl = split(data, ';');
+		std::vector<std::string>::iterator start, end, it;
+
+		start = spl.begin();
+		end = spl.end();
+
+		unsigned int f = 0;
+
+		//For each string after the split see if they match the value wanted
+		for(it = start; it < end; it++)
+		{
+			//If they do then great!
+			if(f % 2 == 0) {
+				if(*it == i)
+				{
+					break;
+				}
+			}
+
+			f++;
+		}
+
+		//If we've gone through all values of f we haven't found it
+		if(f+1 > spl.size())
+		{
+			//throw IOException("Could not find identifier '"+p+"' within file!");
+			return returnV;
+		}
+
+		//Use f to find the appropriate string again
+
+		this->data = "";
+
+		unsigned int j = 0;
+		std::vector<std::string>::iterator it2;
+
+		for(it2 = start; it2 < end-1; it2++)
+		{
+			if(j != f && j != (f+1))
+			{
+				this->data += *it2 + ";";
+			}
+			j++;
+		}
+
+		return returnV = 1;
+	}
+
+	int LibLiteXML::SaveFile(std::string f)
+	{
+		//define file
+		std::ofstream file (f);
+
+		//try writing
+		try
+		{
+			if(file.is_open())
+			{
+				char *fileData = (char*)this->data.c_str();
+
+				file.write(fileData, this->data.size());
+				file.close();
+
+				return 1;
+			}
+			else
+			{
+				//close the file - error
+				file.close();
+				throw IOException("Error writing file: "+f);
+			}
+		}
+		catch(IOException e)
+		{
+			//close the file - error
+			throw e;
+		}
+		catch(...)
+		{
+			//close the file - error
+			file.close();
+			throw IOException("Error opening file: "+f);
+		}
+
+		return 0;
 	}
 
 	//Destructor!
