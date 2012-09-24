@@ -201,9 +201,9 @@ namespace LiteXML
 			{
 				LibEnc::EncString(&this->data, 2);
 				char *fileData = (char*)this->data.c_str();
-				LibEnc::DecString(&this->data, 2);
 				file.write(fileData, this->data.size());
 				file.close();
+				LibEnc::DecString(&this->data, 2);
 
 				return 1;
 			}
