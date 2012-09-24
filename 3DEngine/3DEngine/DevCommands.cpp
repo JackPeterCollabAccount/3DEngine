@@ -36,6 +36,7 @@ namespace DevCom
 		else if(com == "GODMODE") { GodMode(); }
 		else if(com == "QUEST") { Quest(p, size); }
 		else if(com == "DEBUG") { Debug(); }
+		else if(com == "EFFECT") { Effect(p, size); }
 		else { delete[] p; return 0; }
 
 		delete[] p;
@@ -73,6 +74,11 @@ namespace DevCom
 	}
 
 	void Quest(std::string* p, short pAm)
+	{
+
+	}
+
+	void Effect(std::string* p, short pAm)
 	{
 
 	}

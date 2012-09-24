@@ -3,7 +3,7 @@
 
 namespace DevCom
 {
-	enum CommandList { SPAWN, SETROOM, TRIGGER, ITEM, SETHEALTH, KILL, GODMODE, DEBUG, QUEST };
+	enum CommandList { SPAWN, SETROOM, TRIGGER, ITEM, SETHEALTH, KILL, GODMODE, DEBUG, QUEST, EFFECT };
 
 	void Spawn(std::string* p, short pAm);
 	void SetRoom(std::string* p, short pAm);
@@ -12,6 +12,7 @@ namespace DevCom
 	void SetHealth(std::string* p, short pAm);
 	void Kill(std::string* p, short pAm);
 	void Quest(std::string* p, short pAm);
+	void Effect(std::string* p, short pAm);
 	void GodMode();
 	void Debug();
 	int SendCommand(std::string);
