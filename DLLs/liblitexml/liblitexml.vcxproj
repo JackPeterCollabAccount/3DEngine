@@ -39,6 +39,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\Jack\Documents\GitHub\3DEngine\DLLs\libenc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -79,6 +80,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="liblitexml.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\libenc\libenc.vcxproj">
+      <Project>{cee1cd69-0675-4b4a-bbd6-2cb84f8001b5}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
