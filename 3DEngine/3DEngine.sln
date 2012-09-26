@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libinput", "..\DLLs\libinpu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libenc", "..\DLLs\libenc\libenc.vcxproj", "{CEE1CD69-0675-4B4A-BBD6-2CB84F8001B5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DefaultLibraries", "..\DLLs\DefaultLibraries\DefaultLibraries.vcxproj", "{4D4D5DFB-893D-458F-8056-0FAA43666D36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -39,6 +41,10 @@ Global
 		{CEE1CD69-0675-4B4A-BBD6-2CB84F8001B5}.Debug|Win32.Build.0 = Debug|Win32
 		{CEE1CD69-0675-4B4A-BBD6-2CB84F8001B5}.Release|Win32.ActiveCfg = Release|Win32
 		{CEE1CD69-0675-4B4A-BBD6-2CB84F8001B5}.Release|Win32.Build.0 = Release|Win32
+		{4D4D5DFB-893D-458F-8056-0FAA43666D36}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4D4D5DFB-893D-458F-8056-0FAA43666D36}.Debug|Win32.Build.0 = Debug|Win32
+		{4D4D5DFB-893D-458F-8056-0FAA43666D36}.Release|Win32.ActiveCfg = Release|Win32
+		{4D4D5DFB-893D-458F-8056-0FAA43666D36}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

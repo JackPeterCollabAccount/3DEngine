@@ -11,18 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5E79C924-A4A9-439B-9909-E9280F89F234}</ProjectGuid>
+    <ProjectGuid>{4D4D5DFB-893D-458F-8056-0FAA43666D36}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My3DEngine</RootNamespace>
+    <RootNamespace>DefaultLibraries</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
@@ -39,8 +39,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files %28x86%29\Microsoft_DirectX_SDK_%28June 2010%29\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Jack\Documents\GitHub\3DEngine\3DEngine\3DEngine\Debug;C:\Users\Jack\Documents\GitHub\3DEngine\DirectInput\Debug;C:\Program Files %28x86%29\Microsoft_DirectX_SDK_%28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -51,15 +49,11 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Jack\Documents\GitHub\3DEngine\DLLs\libenc;C:\Users\Jack\Documents\GitHub\3DEngine\DLLs\libinput;C:\Users\Jack\Documents\GitHub\3DEngine\DLLs\liblitexml;C:\Users\Peter\Documents\GitHub\3DEngine\DLLs\libinput;C:\Users\Peter\Documents\GitHub\3DEngine\DLLs\libenc;C:\Users\Peter\Documents\GitHub\3DEngine\DLLs\liblitexml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;DEFAULTLIBRARIES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <IgnoreAllDefaultLibraries>
-      </IgnoreAllDefaultLibraries>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;d3dx9.lib;d3d9.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -70,8 +64,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Program Files %28x86%29\Microsoft_DirectX_SDK_%28June 2010%29\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DEFAULTLIBRARIES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -81,27 +74,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DevCommands.h" />
-    <ClInclude Include="EngineMain.h" />
-    <ClInclude Include="stdh.h" />
-    <ClInclude Include="utilities.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="DevCommands.cpp" />
-    <ClCompile Include="EngineMain.cpp" />
-    <ClCompile Include="Plan.cpp" />
-    <ClCompile Include="utilities.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\DLLs\libenc\libenc.vcxproj">
-      <Project>{cee1cd69-0675-4b4a-bbd6-2cb84f8001b5}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\DLLs\libinput\libinput.vcxproj">
-      <Project>{1ff70e71-1be8-46db-a6bc-01bf906f15f8}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\DLLs\liblitexml\liblitexml.vcxproj">
-      <Project>{006c6ff7-cc11-45b2-9814-afaafabefd59}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

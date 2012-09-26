@@ -13,33 +13,14 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="EngineMain.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="stdh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="utilities.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DevCommands.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="EngineMain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DevCommands.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="utilities.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Plan.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <Filter Include="Header Files\Actors">
+      <UniqueIdentifier>{790dcb51-ac7b-4955-b3ba-0ef1b4ab93c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Models">
+      <UniqueIdentifier>{75cb518d-2f7f-4958-b241-cd2f3800410a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Init">
+      <UniqueIdentifier>{f2e97a16-d628-4b74-b9b0-c6b75a20bcff}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
